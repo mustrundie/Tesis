@@ -1,0 +1,124 @@
+Welcome to Git (version 1.9.4-preview20140929)
+
+
+Run 'git help git' to display the help index.
+Run 'git help <command>' to display help for specific commands.
+
+Administrator@OPERATOR /D/Tesis
+$ git init
+Initialized empty Git repository in d:/Tesis/.git/
+
+Administrator@OPERATOR /D/Tesis (master)
+$ git remote add https://github.com/mustrundie/Tesis.git
+usage: git remote add [<options>] <name> <url>
+
+    -f, --fetch           fetch the remote branches
+    --tags                import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --track <branch>  branch(es) to track
+    -m, --master <branch>
+                          master branch
+    --mirror[=<push|fetch>]
+                          set up remote as a mirror to push to or fetch from
+
+
+Administrator@OPERATOR /D/Tesis (master)
+$ git remote add origin-tesis https://github.com/mustrundie/Tesis.git
+
+Administrator@OPERATOR /D/Tesis (master)
+$ git remote -v
+origin-tesis    https://github.com/mustrundie/Tesis.git (fetch)
+origin-tesis    https://github.com/mustrundie/Tesis.git (push)
+
+Administrator@OPERATOR /D/Tesis (master)
+$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        Tes.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Administrator@OPERATOR /D/Tesis (master)
+$ git add . --all
+
+Administrator@OPERATOR /D/Tesis (master)
+$ git commit -m "commit satu"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'Administrator@OPERATOR.(none)')
+
+
+Administrator@OPERATOR /D/Tesis (master)
+$ git config --global user.email "mustrundie@gmail.com"
+
+Administrator@OPERATOR /D/Tesis (master)
+$ git config --global user.name "Randhi"
+
+Administrator@OPERATOR /D/Tesis (master)
+$ git commit -m "commit satu"
+[master (root-commit) aeec731] commit satu
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 Tes.txt
+
+Administrator@OPERATOR /D/Tesis (master)
+$ git push origin-tesis master
+Username for 'https://github.com': mustrundie@gmail.com
+Password for 'https://mustrundie@gmail.com@github.com':
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 207 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/mustrundie/Tesis.git
+ * [new branch]      master -> master
+
+Administrator@OPERATOR /D/Tesis (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   Tes.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Administrator@OPERATOR /D/Tesis (master)
+$ git add . --all
+
+Administrator@OPERATOR /D/Tesis (master)
+$ git commit -m "commit dua"
+[master bbb4b23] commit dua
+ 1 file changed, 1 insertion(+)
+
+Administrator@OPERATOR /D/Tesis (master)
+$ git remote -v
+origin-tesis    https://github.com/mustrundie/Tesis.git (fetch)
+origin-tesis    https://github.com/mustrundie/Tesis.git (push)
+
+Administrator@OPERATOR /D/Tesis (master)
+$ git push origin-tesis master
+Username for 'https://github.com': mustrundie@gmail.com
+Password for 'https://mustrundie@gmail.com@github.com':
+Counting objects: 5, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 287 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/mustrundie/Tesis.git
+   aeec731..bbb4b23  master -> master
+
+Administrator@OPERATOR /D/Tesis (master)
+$
